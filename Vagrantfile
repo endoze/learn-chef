@@ -11,7 +11,8 @@ Vagrant.configure("2") do |config|
     chef.json = { }
 
     chef.run_list = [
-        "recipe[learn-chef::default]"
+      "apt",
+      "recipe[learn-chef::default]"
     ]
   end
 end
