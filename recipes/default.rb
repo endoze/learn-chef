@@ -7,7 +7,7 @@
 # MIT License
 #
 
-include_recipe 'nginx'
+include_recipe 'nginx::source'
 
 template '/etc/nginx/sites-enabled/learn_chef' do
   source 'nginx.conf.erb'

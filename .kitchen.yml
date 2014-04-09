@@ -2,15 +2,20 @@
 driver:
   name: vagrant
 
+
 provisioner:
   name: chef_solo
+  require_chef_omnibus: "11.4.0"
 
 platforms:
   - name: ubuntu-12.04
+    run_list:
+      - recipe[apt::default]
   - name: centos-6.4
+    run_list:
+      - recipe[yum::default]
 
 suites:
   - name: default
     run_list:
       - recipe[learn-chef::default]
-    attributes:
